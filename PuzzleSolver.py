@@ -3,7 +3,7 @@
 # 1/1/2025
 
 # based on work from https://github.com/josephmaklc/wordsearchpuzzle
-# puzzles of various dimenstions can be generated from https://puzzlemaker.discoveryeducation.com/word-search
+# puzzles of various dimensions can be generated from https://puzzlemaker.discoveryeducation.com/word-search
 puzzle = []
 solution = []
 MAX_ROW = 0
@@ -183,11 +183,20 @@ def ShowPuzzle():
             print (puzzle[row][col], end="")
             #print(f"({row}, {col}) ", end = "")
         print()
+        
 
 def ShowSolution():
 
+    print()
+    print("   ", end = "")
+    for col in range(0, MAX_COL):
+        print(f"{col}", end = "")
+
+    print()
+
     for row in range(0, MAX_ROW):
 
+        print (f" {row} ", end = "")
         for col in range(0, MAX_COL):
            
             if (solution[row][col] == True):
@@ -201,7 +210,6 @@ def ShowSolution():
 def FindWord(word):
 
     for row in range(0, MAX_ROW):
-
         for col in range(0, MAX_COL):
            
            CheckWest(row, col, word)
