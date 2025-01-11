@@ -60,6 +60,11 @@ Follow this video [How to use Tesseract OCR in a Python script (pytesseract)](ht
 
 You will need to install that also the PIL library, too
 
+
+<img src = "https://github.com/alexcmak/WordPuzzleSolver/blob/main/word_puzzle1.png" width = 350>
+
+
+
 ```
 C:\>python ImageToPuzzle.py
 Enter a file name to convert to text: word_puzzle1.png
