@@ -1,9 +1,7 @@
 # WordPuzzleSolver
-Go a word word puzzle and don't want to find the words yourself? I've got you.
-
+Go a word puzzle and don't want to find the words yourself? I've got you.
 
 This program also uses [pytest](https://docs.pytest.org/en/stable/) for unit testing.
-
 
 ```
 C:\>python PuzzleSolver.py
@@ -61,3 +59,36 @@ This program uses tesseract.
 Follow this video [How to use Tesseract OCR in a Python script (pytesseract)](https://www.youtube.com/watch?v=HNCypVfeTdw) to get pyton OCR to work on your computer.
 
 You will need to install that also the PIL library, too
+
+```
+C:\>python ImageToPuzzle.py
+Enter a file name to convert to text: word_puzzle1.png
+--------- [ OCR ] --------------
+ZEYLLEKJVS
+CTF CIRUBYM
+HURUAQFOGA
+HC OERMYCPE
+JXKDHZRIQJ
+DXDLKTZACS
+NYB QZZLGHD
+EVD OUUXS WP
+AKWRATXJYE
+
+SMJ FEMJBFX
+
+--------- [ clean up ] --------------
+ZEYLLEKJVS
+CTFCIRUBYM
+HURUAQFOGA
+HCOERMYCPE
+JXKDHZRIQJ
+DXDLKTZACS
+NYBQZZLGHD
+EVDOUUXSWP
+AKWRATXJYE
+SMJFEMJBFX
+
+word_puzzle1.txt created
+yes rectangle puzzle
+```
+
