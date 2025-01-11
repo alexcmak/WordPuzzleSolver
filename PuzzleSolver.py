@@ -212,16 +212,21 @@ def FindWord(word):
     for row in range(0, MAX_ROW):
         for col in range(0, MAX_COL):
            
-           CheckWest(row, col, word)
-           CheckEast(row, col, word)
-           CheckNorth(row, col, word)
-           CheckSouth(row, col, word)
-           CheckNorthWest(row, col, word)
-           CheckNorthEast(row, col, word)
-           CheckSouthEast(row, col, word)
-           CheckSouthWest(row, col, word)
-           
-def ReadPuzzle():
+           w = CheckWest(row, col, word)
+           e = CheckEast(row, col, word)
+           n = CheckNorth(row, col, word)
+           s = CheckSouth(row, col, word)
+           nw = CheckNorthWest(row, col, word)
+           ne = CheckNorthEast(row, col, word)
+           se = CheckSouthEast(row, col, word)
+           sw = CheckSouthWest(row, col, word)
+
+           if any([w, e, n, s, nw, ne, se, sw]):
+               return True
+
+    return False
+
+def ReadPuzzle(filename):
 
     global puzzle
     global MAX_ROW
@@ -230,7 +235,7 @@ def ReadPuzzle():
 
     puzzle = [] 
 
-    with open("puzzle.txt") as f:
+    with open(filename) as f:
        for line in f.readlines():
             line = line.strip()
             puzzle.append(line.split('\t'))
@@ -246,7 +251,7 @@ def ReadPuzzle():
 
 def main():
   
-    ReadPuzzle()
+    ReadPuzzle('puzzle.txt')
     ShowPuzzle()
     FindWord("APPLE")
     FindWord("BANANA")

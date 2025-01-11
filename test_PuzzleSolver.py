@@ -13,7 +13,7 @@ import PuzzleSolver
 
 def test_RunPuzzle():
 
-	PuzzleSolver.ReadPuzzle()
+	PuzzleSolver.ReadPuzzle("puzzle.txt")
 
 	assert PuzzleSolver.CheckWest(8,5, "BANANA") == True
 	assert PuzzleSolver.CheckWest(8,5, "APPLE") == False
