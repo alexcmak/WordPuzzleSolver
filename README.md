@@ -1,5 +1,7 @@
 # WordPuzzleSolver
-Go a word puzzle and don't want to find the words yourself? I've got you.
+Got a word puzzle and don't want to find the words yourself? I've got you.
+
+Want to keep some kids busy for a little while? [generate some puzzles](https://puzzlemaker.discoveryeducation.com/word-search).
 
 This program also uses [pytest](https://docs.pytest.org/en/stable/) for unit testing.
 
