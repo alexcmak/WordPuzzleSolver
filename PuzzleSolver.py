@@ -167,17 +167,30 @@ def CheckSouthWest(row, col, word):
 
 	return False
 
-def ShowPuzzle():
-  
-	print("   ", end = "")
+def ShowRuler():
+	if (MAX_COL > 10):
+		print("    " , end = "")
+		for col in range(0, MAX_COL):
+			if col % 10 == 0:
+				print(int(col/10), end = "")
+			else:
+				print("-", end = "")
+
+		print()
+
+	print("    " , end = "")
 	for col in range(0, MAX_COL):
-		print(f"{col}", end = "")
+		print(f"{col % 10}", end = "")
 
 	print()
 
+def ShowPuzzle():
+  
+	ShowRuler()
+
 	for row in range(0, MAX_ROW):
 
-		print (f" {row} ", end = "")
+		print (f" {row:2} ", end = "")
 		for col in range(0, MAX_COL):
 			
 			print (puzzle[row][col], end="")
@@ -188,15 +201,12 @@ def ShowPuzzle():
 def ShowSolution():
 
 	print()
-	print("   ", end = "")
-	for col in range(0, MAX_COL):
-		print(f"{col}", end = "")
 
-	print()
+	ShowRuler()
 
 	for row in range(0, MAX_ROW):
 
-		print (f" {row} ", end = "")
+		print (f" {row:2} ", end = "")
 		for col in range(0, MAX_COL):
 			
 			if (solution[row][col] == True):
