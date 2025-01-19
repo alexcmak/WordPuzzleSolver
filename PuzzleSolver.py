@@ -168,9 +168,9 @@ def CheckSouthWest(row, col, word):
 	return False
 
 def ShowRuler():
-	if (MAX_COL > 10):
+	if (MAX_COL >= 10):
 		print("    " , end = "")
-		for col in range(0, MAX_COL):
+		for col in range(1, MAX_COL+1):
 			if col % 10 == 0:
 				print(int(col/10), end = "")
 			else:
@@ -179,7 +179,7 @@ def ShowRuler():
 		print()
 
 	print("    " , end = "")
-	for col in range(0, MAX_COL):
+	for col in range(1, MAX_COL+1):
 		print(f"{col % 10}", end = "")
 
 	print()
@@ -190,7 +190,7 @@ def ShowPuzzle():
 
 	for row in range(0, MAX_ROW):
 
-		print (f" {row:2} ", end = "")
+		print (f" {row+1:2} ", end = "")
 		for col in range(0, MAX_COL):
 			
 			print (puzzle[row][col], end="")
@@ -201,12 +201,11 @@ def ShowPuzzle():
 def ShowSolution():
 
 	print()
-
 	ShowRuler()
 
 	for row in range(0, MAX_ROW):
 
-		print (f" {row:2} ", end = "")
+		print (f" {row+1:2} ", end = "")
 		for col in range(0, MAX_COL):
 			
 			if (solution[row][col] == True):
@@ -260,7 +259,7 @@ def ReadPuzzle(filename):
 
 	solution = [[False for _ in range(MAX_COL)] for _ in range(MAX_ROW)]
 
-	print(f'puzzle file {filename} successfully read')
+	print(f'puzzle file {filename} {MAX_ROW}x{MAX_COL} successfully read.')
 
 def menu():
 	print('----------------')
